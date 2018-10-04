@@ -2,10 +2,11 @@
 #define TIME_HANDLER_TIMER_HPP
 
 #include <chrono>
+#include "Config.h"
 
 namespace time_handler
 {
-	class Timer
+	class TIME_HANDLERS_EXPORT Timer
 	{
 	public:
 		Timer();
