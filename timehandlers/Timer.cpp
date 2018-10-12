@@ -2,7 +2,7 @@
 
 namespace time_handler
 {
-	Timer::Timer() : m_startTime(std::chrono::system_clock::now())
+	Timer::Timer() noexcept : m_startTime(std::chrono::system_clock::now())
 	{
 	}
 
