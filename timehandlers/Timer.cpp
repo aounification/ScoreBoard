@@ -1,6 +1,6 @@
 #include "Timer.h"
 
-namespace time_handler
+namespace timehandler
 {
 	Timer::Timer() noexcept : m_startTime(std::chrono::system_clock::now())
 	{

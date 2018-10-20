@@ -1,47 +1,33 @@
-#include <chrono>
 #include "Timer.h"
+#include "TestHelpers.h"
 #include "gtest/gtest.h"
-
-
-namespace
-{
-	void waitInMilliseconds(int milliseconds)
-	{
-		time_handler::Timer timer;
-		std::chrono::milliseconds ms(milliseconds);
-
-		while (timer.getDuration() < ms)
-		{
-		}
-	}
-}
 
 TEST(TimerTest, compareDurationsAfter10MsWait)
 {
-	time_handler::Timer timer;
-	const time_handler::Timer referenceTimer;
-	::waitInMilliseconds(10);
+	timehandler::Timer timer;
+	const timehandler::Timer referenceTimer;
+	timehandler::test::helper::wait(std::chrono::milliseconds(10));
 
 	EXPECT_EQ(referenceTimer.getDuration(), timer.getDuration());
 }
 
 TEST(TimerTest, compareDurationsAfter10MsWaitThenReset)
 {
-	time_handler::Timer timer;
-	const time_handler::Timer referenceTimer;
-	::waitInMilliseconds(10);
+	timehandler::Timer timer;
+	const timehandler::Timer referenceTimer;
+	timehandler::test::helper::wait(std::chrono::milliseconds(10));
 	timer.reset();
 	EXPECT_GT(referenceTimer.getDuration(), timer.getDuration());
 }
 
 TEST(TimerTest, compareDurationsOfCopiedTimers)
 {
-	time_handler::Timer timer;
-	const time_handler::Timer referenceTimer;
-	::waitInMilliseconds(10);
+	timehandler::Timer timer;
+	const timehandler::Timer referenceTimer;
+	timehandler::test::helper::wait(std::chrono::milliseconds(10));
 	timer.reset();
 
-	time_handler::Timer newTimer(referenceTimer);
+	timehandler::Timer newTimer(referenceTimer);
 	EXPECT_EQ(referenceTimer.getDuration(), newTimer.getDuration());
 	EXPECT_LT(timer.getDuration(), newTimer.getDuration());
 

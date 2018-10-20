@@ -3,7 +3,7 @@
 
 #include <chrono>
 
-namespace time_handler
+namespace timehandler
 {
 	class Timer
 	{
