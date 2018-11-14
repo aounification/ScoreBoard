@@ -13,5 +13,7 @@ enable_testing()
 
 add_subdirectory(thirdparty)
 add_subdirectory(timehandlers)
+add_subdirectory(common)
+# add_subdirectory(basketball)
 add_subdirectory(tests)
 
