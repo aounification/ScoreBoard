@@ -11,7 +11,7 @@ namespace common
 		Player() = default;
 		Player(int jerseyNumber, const std::string &name);
 		Player(const Player &) = default;
-		Player(Player &&) = delete;
+		Player(Player &&) = default;
 		Player &operator=(const Player &) = default;
 		Player &operator=(Player &&) = delete;
 		~Player() = default;
