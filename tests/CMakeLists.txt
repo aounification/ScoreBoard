@@ -1,3 +1,3 @@
 add_subdirectory(timehandlerstest)
 add_subdirectory(commontest)
-# add_subdirectory(basketballtest)
+add_subdirectory(datahandlerstest)
